@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Estadísticas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del artículo</th>
+            <th>Porcentaje del stock de la categoría</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(CantidadPorCategoria item in ViewBag.Productos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.Nombre)</td>
+                <td>@Html.DisplayFor(model => item.Cantidad)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Precio promedio de los artículos: @ViewBag.Promedios</h3>
